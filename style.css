@@ -1,0 +1,83 @@
+html {
+  font-size: 20px;
+  line-height: 1.6;
+  font-family: Roboto, sans-serif;
+  color: antiquewhite;
+}
+
+body
+{
+  background: linear-gradient(20deg, #232325, #131313);
+  min-height: 100vh;
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+ /*animate the background gradient position, use vh so that start/end syncs up viewport horizontal*/
+@keyframes rainbow {
+    from {background-position: -100vh 0}
+    to {background-position: 100vh 0}
+} 
+
+/*compatibility*/
+@-moz-keyframes rainbow {
+    from {background-position: -100vh 0}
+    to {background-position: 100vh 0}
+}
+@-webkit-keyframes rainbow {
+    from {background-position: -100vh 0}
+    to {background-position: 100vh 0}
+}
+@-ms-keyframes rainbow {
+    from {background-position: -100vh 0}
+    to {background-position: 100vh 0}
+}
+@-o-keyframes rainbow {
+    from {background-position: -100vh 0}
+    to {background-position: 100vh 0}
+}
+input::placeholder
+{
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+ .rainbow {
+  border: double 2px transparent;
+  border-radius: 3px;
+     /*added a colourstop here, without the third colourstop you get a hard edge*/
+  background: linear-gradient(transparent, transparent), 
+  repeating-linear-gradient(to right, rgb(82, 82, 209),rgb(235, 50, 235), rgb(82, 82, 209));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+
+            animation-name: rainbow;
+            animation-duration:  3s;
+
+            /*set animation to continue forever, and to move at a single rate instead of easing*/
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+}
+
+#btnSearch 
+{
+  width: 5rem;
+  height: 1.2rem;
+  background-color: transparent;
+  color: aliceblue;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  transition: 200ms ease-out;
+}
+
+#btnSearch:hover
+{
+  background-color: rgb(82, 82, 209);
+}
